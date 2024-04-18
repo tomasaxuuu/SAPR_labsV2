@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Table
+{% endblock %}
+{% block content %}
+<div class="text-center">
+    {% for el in data %}
+    <h1>{{ el[1]}} --- {{ el[4]}}</h1>
+    {% endfor %}
+</div>
+{% endblock %}

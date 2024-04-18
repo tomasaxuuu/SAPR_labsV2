@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Table
+{% endblock %}
+{% block content %}
+<div class="text-center">
+    {% for el in diagramm %}
+    <h1>{{ el[0]}} --- {{ el[1]}} ---> {{ el[2]}}</h1>
+    <a href="{{ url_for('edit_values', table_name=table_name) }}">Редактирование связей</a>
+    <a href="{{ url_for('edit_desc', table_name=table_name) }}">Редактирование описания</a>
+    <a href="{{ url_for('description', table_name=table_name) }}">Просмотр описания</a>
+    {% endfor %}
+</div>
+{% endblock %}
