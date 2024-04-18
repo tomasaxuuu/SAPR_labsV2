@@ -4,12 +4,52 @@
 Table
 {% endblock %}
 {% block content %}
-<div class="text-center">
-    {% for el in diagramm %}
-    <h1>{{ el[0]}} --- {{ el[1]}} ---> {{ el[2]}}</h1>
-    <a href="{{ url_for('edit_values', table_name=table_name) }}">Редактирование связей</a>
-    <a href="{{ url_for('edit_desc', table_name=table_name) }}">Редактирование описания</a>
-    <a href="{{ url_for('description', table_name=table_name) }}">Просмотр описания</a>
-    {% endfor %}
+<style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: white;
+    }
+    th,
+    td {
+      border: 1px solid white;
+      padding: 10px;
+      max-width: 100%;
+      width: 300px;
+      text-align: center;
+    }
+    th {
+      background-color: #4caf50;
+    }
+</style>
+<div
+        style="display: flex; flex-direction: column; align-items: center; gap: 50px"
+>
+    <div
+            style="
+      gap: 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    "
+    >
+        <table style="color: white">
+            <tr>
+                <th>Связи</th>
+            </tr>
+            {% for el in diagramm %}
+            <tr>
+                <td style="font-size: 20px">{{ el[0]}} --- {{ el[1]}} ---> {{ el[2]}}</td>
+
+
+            </tr>
+            {% endfor %}
+        </table>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+                    <a class="submit_btn" href="{{ url_for('edit_values', table_name=table_name) }}" style="color: white">Редактирование связей</a>
+                    <a class="submit_btn" href="{{ url_for('edit_desc', table_name=table_name) }}" style="color: white">Редактирование описания</a>
+                    <a class="submit_btn" href="{{ url_for('description', table_name=table_name) }}" style="color: white">Просмотр описания</a>
+                </div>
+    </div>
 </div>
 {% endblock %}

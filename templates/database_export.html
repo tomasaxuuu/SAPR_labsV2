@@ -5,10 +5,50 @@ Data
 {% endblock %}
 
 {% block content %}
-<div class="text-center">
-    {% for el in data %}
-    {{ el }}
-    <a href="{{ url_for('table_view', table_name=el) }}">Связи</a>
-    {% endfor %}
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+  }
+  th,
+  td {
+    border: 1px solid white;
+    padding: 10px;
+    max-width: 100%;
+    width: 300px;
+    text-align: center;
+  }
+  th {
+    background-color: #4caf50;
+  }
+</style>
+<div
+  style="display: flex; flex-direction: column; align-items: center; gap: 50px"
+>
+  <div
+    style="
+      gap: 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    "
+  >
+    <table style="color: white">
+      <tr>
+        <th>Файл</th>
+        <th>Связи</th>
+      </tr>
+      {% for el in data %}
+      <tr>
+        <td>{{ el }}</td>
+
+        <td>
+          <a href="{{ url_for('table_view', table_name=el) }}" style="color: white">Просмотр связей для файла <h2 style="color: yellow">{{ el }}</h2></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
 </div>
 {% endblock %}

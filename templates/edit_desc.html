@@ -5,21 +5,41 @@ Edit description
 {% endblock %}
 
 {% block content %}
-<div class="text-center">
-    <div class="edit-term-block">
-        <h1>Редактировать данные</h1>
-        <hr>
-        <br>
+<style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: white;
+    }
+    th,
+    td {
+      border: 1px solid white;
+      padding: 10px;
+      max-width: 100%;
+      width: 300px;
+      text-align: center;
+    }
+    th {
+      background-color: #4caf50;
+    }
+</style>
+<div
+        style="display: flex; flex-direction: column; align-items: center; gap: 50px"
+>
+    <div
+            style="
+      gap: 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    "
+    >
         <form action="{{ url_for('update_description', table_name=table_name) }}" method="POST">
-            <table class="table table-bordered table-dark">
-                <thead>
+            <table style="color: white">
                 <tr>
-                    <th scope="col"><h3>Термин</h3></th>
-                    <th scope="col"><h3>Описание</h3></th>
-
+                    <th>Термины</th>
+                    <th>Редактирование Описания</th>
                 </tr>
-                </thead>
-                <tbody>
                 {% for row in table_data %}
                 {% if row[1] != '' %}
                 <tr>
@@ -29,20 +49,12 @@ Edit description
                 </tr>
                 {% endif %}
                 {% endfor %}
-
-                </tbody>
             </table>
-            <button type="submit" class="btn btn-outline-light">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                     class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
-                    <path fill-rule="evenodd"
-                          d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
-                </svg>
-                Обновить
+            <button type="submit" class="submit_btn" style="display: flex; margin: 0 auto; margin-top: 20px">
+
+                Обновить описание
             </button>
         </form>
-        <hr>
     </div>
 </div>
 {% endblock %}

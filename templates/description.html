@@ -5,35 +5,56 @@ Description_view
 {% endblock %}
 
 {% block content %}
-<div class="text-center">
-    <div class="table-block">
-        <div class="text-center">
-            <h2>Термины
-                <a href="{{ url_for('edit_desc', table_name=table_name) }}"
-                   class="btn btn-outline-light">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pen"
-                         viewBox="0 0 16 16">
-                        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>
-                    </svg>
-                </a></h2>
-            <table class="table table-bordered table-dark">
-                <thead>
-                <tr>
-                    <th scope="col"><h3>Термин</h3></th>
-                    <th scope="col"><h3>Описание</h3></th>
+<style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: white;
+    }
+    th,
+    td {
+      border: 1px solid white;
+      padding: 10px;
+      max-width: 100%;
+      width: 300px;
+      text-align: center;
+    }
+    th {
+      background-color: #4caf50;
+    }
+</style>
+<div
+        style="display: flex; flex-direction: column; align-items: center; gap: 50px"
+>
+    <div
+            style="
+      gap: 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    "
+    >
+        <table style="color: white">
+            <tr>
+                <th>Термины</th>
+                <th>Описание</th>
+            </tr>
+            {% for term in terms %}
+            <tr>
+                <td>{{ term[0] }}</td>
 
-                </tr>
-                </thead>
-                <tbody>
-                {% for term in terms %}
-                <tr>
-                    <th scope="row">{{ term[0] }}</th>
-                    <td>{{ term[1] }}</td>
-                </tr>
-                {% endfor %}
+                <td>
+                    {{ term[1] }}
+                </td>
 
-                </tbody>
-            </table>
+            </tr>
+            {% endfor %}
+        </table>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+
+            <a class="submit_btn" href="{{ url_for('edit_desc', table_name=table_name) }}" style="color: white">Редактирование
+                описания</a>
+
         </div>
     </div>
 </div>

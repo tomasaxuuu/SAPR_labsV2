@@ -1,0 +1,213 @@
+.wrap_container {
+  max-width: 1360px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+body {
+  background: #1f1d2b;
+  font-family: "Inter", sans-serif;
+}
+header {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  background: $white;
+  z-index: 200;
+  position: fixed;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  transition: all 0.5s;
+}
+.header_nav {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(93.51deg, #9b51e0 2.84%, #3081ed 99.18%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.logo a {
+  cursor: pointer;
+}
+.nav_menu ul {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.nav-item a {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(93.51deg, #9b51e0 2.84%, #3081ed 99.18%);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.3s;
+}
+.nav-item:hover {
+  background: linear-gradient(93.51deg, #9b51e0 2.84%, #3081ed 99.18%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.nav-item a:hover {
+  background-size: 200% 2px;
+}
+.nav_buttons {
+  display: flex;
+  gap: 32px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #bcbcbc;
+}
+.nav_buttons a {
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  border: 1px solid #d7d7d7;
+  border-radius: 10px;
+}
+.nav_buttons a:hover {
+  border-color: hsl(348deg 99% 62%);
+  background: hsl(348deg 99% 62%);
+}
+.burger-menu {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 20;
+  display: none;
+  cursor: pointer;
+}
+.burger-menu span {
+  transition: all 0.4s;
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: white;
+  transform: translate(-50%, -50%);
+}
+.burger-menu span:nth-child(1) {
+  top: calc(50% - 10px);
+}
+.burger-menu span:nth-child(2) {
+  top: calc(50% + 10px);
+}
+.burger__active span:nth-of-type(1) {
+  display: none;
+}
+.burger__active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+.burger__active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg);
+}
+.body__active {
+  overflow: hidden;
+  height: 100%;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 150px 0;
+}
+.main_col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  gap: 50px;
+}
+.list {
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  margin: auto;
+  padding-bottom: 50px;
+}
+.lab-row {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding-bottom: 50px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+}
+.content a {
+  text-decoration: none;
+  color: white;
+  border-color: hsl(348deg 99% 62%);
+  background: hsl(348deg 99% 62%);
+  padding: 40px;
+  border-radius: 25px;
+  transition: all ease-in-out 0.5s;
+}
+.content a:hover {
+  transform: scale(1.05);
+  background: white;
+  color: hsl(348deg 99% 62%);
+}
+.errorlist li {
+  font-size: 12px;
+}
+.profile_col div {
+  display: flex;
+  flex-direction: column;
+}
+.profile_col h3 {
+  font-size: 14px;
+}
+.profile_col span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f9ff95;
+}
+.form p {
+  display: flex;
+  flex-direction: column;
+}
+.form p label {
+  font-size: 14px;
+}
