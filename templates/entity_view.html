@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Table
+{% endblock %}
+{% block content %}
+<style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: white;
+    }
+    th,
+    td {
+      border: 1px solid white;
+      padding: 10px;
+      max-width: 100%;
+      width: 300px;
+      text-align: center;
+    }
+    th {
+      background-color: #4caf50;
+    }
+</style>
+<div
+        style="display: flex; flex-direction: column; align-items: center; gap: 50px"
+>
+    <div
+            style="
+      gap: 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    "
+    >
+        <table style="color: white">
+        <h2>Связи с сущностью "{{ all_entity[0][0] }}"</h2>
+            {% for entity in all_entity %}
+            <tr>
+                <td style="font-size: 20px">{{entity[0]}}</td>
+                <td style="font-size: 20px">--- </td>
+                <td style="font-size: 20px"> {{entity[1]}} </td>
+                <td style="font-size: 20px"> ---> </td>
+                <td style="font-size: 20px">{{entity[2]}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+</div>
+{% endblock %}
