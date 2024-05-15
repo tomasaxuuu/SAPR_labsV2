@@ -219,6 +219,7 @@ def entity_view(table_name, entity_id):
             for j in range(0, len(table_data)):
                 if table_data[j][0] == third:
                     one_entity.append(table_data[j][1])
+                    one_entity.append(table_data[j][0])
             all_entity.append(one_entity)
         elif entity_id == table_data[i][3]:
             first = table_data[i][3]  # таргет
@@ -234,6 +235,7 @@ def entity_view(table_name, entity_id):
             for j in range(0, len(table_data)):
                 if table_data[j][0] == third:
                     one_entity.append(table_data[j][1])
+                    one_entity.append(table_data[j][0])
             all_entity.append(one_entity)
     for i in range(0, len(table_data)):
         term = []
