@@ -35,7 +35,10 @@ Table
     >
         <table style="color: white">
         <h2>Связи с сущностью "{{ all_entity[0][0] }}"</h2>
+            Описание для сущности {{ terms[0][0] }}: {{ terms[0][1] }}
             {% for entity in all_entity %}
+
+
             <tr>
                 <td style="font-size: 20px">{{entity[0]}}</td>
                 <td style="font-size: 20px">--- </td>
@@ -44,6 +47,7 @@ Table
                 <td style="font-size: 20px">{{entity[2]}}</td>
 
             </tr>
+
             {% endfor %}
         </table>
 

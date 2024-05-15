@@ -36,14 +36,15 @@ Table
         <table style="color: white">
 
             {% for el in diagramm %}
+
             <tr>
-                <td style="font-size: 20px"><a style="text-decoration: none; color: green" href="/entity_view/{{ table_name }}/{{ el[3] }}">{{ el[0] }}</a></td>
+                <td style="font-size: 20px"><a style="text-decoration: none; color: green" href="/entity_view/{{ table_name }}/{{ el[3] }}">{{ el[0] }} </a></td>
                 <td style="font-size: 20px">--- </td>
                 <td style="font-size: 20px">{{ el[1] }}</td>
                 <td style="font-size: 20px"> ---> </td>
                 <td style="font-size: 20px"><a style="text-decoration: none; color: green" href="/entity_view/{{ table_name }}/{{ el[4] }}">{{ el[2] }}</a></td>
-
             </tr>
+
             {% endfor %}
         </table>
         <div style="display: flex; flex-direction: column; gap: 10px">

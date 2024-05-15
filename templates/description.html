@@ -40,6 +40,7 @@ Description_view
                 <th>Описание</th>
             </tr>
             {% for term in terms %}
+            {% if term[1] != '' and term[5] != 'relationship'%}
             <tr>
                 <td>{{ term[0] }}</td>
 
@@ -48,6 +49,7 @@ Description_view
                 </td>
 
             </tr>
+            {% endif %}
             {% endfor %}
         </table>
         <div style="display: flex; flex-direction: column; gap: 10px">

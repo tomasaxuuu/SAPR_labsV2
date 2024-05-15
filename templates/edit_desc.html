@@ -41,7 +41,7 @@ Edit description
                     <th>Редактирование Описания</th>
                 </tr>
                 {% for row in table_data %}
-                {% if row[1] != '' %}
+                {% if row[1] != '' and row[5] != 'relationship'%}
                 <tr>
                     <th scope="row">{{ row[1] }}</th>
                     <td><input type="text" class="form-control" id="value_{{ row[0] }}" name="value_{{ row[0] }}"

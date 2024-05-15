@@ -103,7 +103,9 @@ def data_base_view():
 @app.route('/table_view/<table_name>')
 def table_view(table_name):
     diagramm = []
+
     data = get_table_data(table_name)
+
     for i in range(0, len(data)):
         rel = []
         start_point = ''
@@ -124,6 +126,7 @@ def table_view(table_name):
             rel.append(start_point)
             rel.append(end_point)
             diagramm.append(rel)
+
     return render_template('table_view.html', data=data, table_name=table_name, diagramm=diagramm)
 
 
@@ -199,6 +202,7 @@ def entity_view(table_name, entity_id):
     relations_dict = {'Наследование': ['Родитель для', 'Наследник от'], 'Реализация': ['Тип для', 'Реализация для']}
     table_data = get_table_data(table_name)
     all_entity = []
+    terms = []
     for i in range(0, len(table_data)):
         one_entity = []
         if entity_id == table_data[i][2]:
@@ -231,7 +235,14 @@ def entity_view(table_name, entity_id):
                 if table_data[j][0] == third:
                     one_entity.append(table_data[j][1])
             all_entity.append(one_entity)
-    return render_template('entity_view.html', all_entity=all_entity)
+    for i in range(0, len(table_data)):
+        term = []
+        if entity_id == table_data[i][0]:
+            term.append(table_data[i][1])
+            term.append(table_data[i][4])
+        if term != []:
+            terms.append(term)
+    return render_template('entity_view.html', all_entity=all_entity, terms=terms)
 
 
 if __name__ == '__main__':
