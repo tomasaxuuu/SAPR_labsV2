@@ -42,8 +42,7 @@ Description_view
             {% for term in terms %}
             {% if term[1] != '' and term[5] != 'relationship'%}
             <tr>
-                <td>{{ term[0] }}</td>
-
+                <td><a class="submit_btn" href="/entity_view/{{ table_name }}/{{term [2]}}">{{ term[0] }}</a></td>
                 <td>
                     {{ term[1] }}
                 </td>

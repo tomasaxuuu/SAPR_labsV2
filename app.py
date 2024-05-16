@@ -192,9 +192,10 @@ def description(table_name):
         if table_data[i][1] is not None:
             term.append(table_data[i][1])
             term.append(table_data[i][4])
+            term.append(table_data[i][0])
         if term != []:
             terms.append(term)
-
+    terms = sorted(terms)
     return render_template('description.html', table_name=table_name, table_data=table_data, terms=terms)
 
 @app.route('/entity_view/<table_name>/<entity_id>')
