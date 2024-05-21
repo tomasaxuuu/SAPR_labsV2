@@ -17,9 +17,17 @@ def parse_xml(file_contents):
     for obj in root.findall('.//mxCell'):
         obj_data = {}
         obj_data['id'] = obj.get('id')
+        while '_' in obj_data['id']:
+            obj_data['id'] = obj_data['id'].replace('_', '', 1)
         obj_data['value'] = obj.get('value')
         obj_data['source'] = obj.get('source')
+        if obj_data['source']:
+            while '_' in obj_data['source']:
+                obj_data['source'] = obj_data['source'].replace('_', '', 1)
         obj_data['target'] = obj.get('target')
+        if obj_data['target']:
+            while '_' in obj_data['target']:
+                obj_data['target'] = obj_data['target'].replace('_', '', 1)
         objects.append(obj_data)
 
     return objects
