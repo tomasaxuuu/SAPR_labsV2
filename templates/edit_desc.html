@@ -44,8 +44,8 @@ Edit description
                 {% if row[1] != '' and row[5] != 'relationship'%}
                 <tr>
                     <th scope="row">{{ row[1] }}</th>
-                    <td><input type="text" class="form-control" id="value_{{ row[0] }}" name="value_{{ row[0] }}"
-                               value="{{ row[4] }}" style="width:40%; margin:auto; text-align:center;"></td>
+                    <td><textarea type="text" class="form-control" id="value_{{ row[0] }}" name="value_{{ row[0] }}"
+                                  value="{{ row[4] }}" style="width:100%; margin:auto; text-align:center;"></textarea></td>
                 </tr>
                 {% endif %}
                 {% endfor %}
